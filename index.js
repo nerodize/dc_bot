@@ -11,7 +11,8 @@ const client = new Discord.Client({
     ]
 });
 
-client.on('ready', () => {
+// what is the difference: on and once?
+client.once('ready', () => {
     console.log(`Logged in as ${client.user.tag}`)
 })
 
