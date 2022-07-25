@@ -11,6 +11,17 @@ const client = new Discord.Client({
     ]
 });
 
+let bot = {
+    client, 
+    prefix: '!',
+    owners: ['401415461373345801'],
+}
+
+client.commands = new Discord.Collection();
+client.events = new Discord.Collection();
+
+module.exports = bot;
+
 /*
 // what is the difference: on and once?
 client.once('ready', () => {
