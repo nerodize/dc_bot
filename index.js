@@ -11,6 +11,7 @@ const client = new Discord.Client({
     ]
 });
 
+/*
 // what is the difference: on and once?
 client.once('ready', () => {
     console.log(`Logged in as ${client.user.tag}`)
@@ -33,3 +34,4 @@ client.on('guildMemberAdd', async (member) => {
 });
 
 client.login(process.env.TOKEN);
+*/
