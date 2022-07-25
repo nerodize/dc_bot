@@ -1,7 +1,7 @@
-const Discord = require("discord.js");
-require("dotenv").config();
+const Discord = require('discord.js');
+require('dotenv').config();
 
-const generateImage = require("./generateImage");
+const generateImage = require('./generateImage');
 
 const client = new Discord.Client({ 
     intents: [
