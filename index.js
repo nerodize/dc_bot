@@ -1,7 +1,7 @@
-const Discord = require("discord.js");
-require("dotenv").config();
+const Discord = require('discord.js');
+require('dotenv').config();
 
-const generateImage = require("./generateImage");
+const generateImage = require('./generateImage');
 
 const client = new Discord.Client({ 
     intents: [
@@ -11,6 +11,21 @@ const client = new Discord.Client({
     ]
 });
 
+let bot = {
+    client, 
+    prefix: '!',
+    owners: ['401415461373345801'],
+}
+
+client.commands = new Discord.Collection();
+client.events = new Discord.Collection();
+
+client.loadEvents = (bot, reload) => require('./handlers/events')(bot, reload);
+client.loadEvents(bot, false);
+
+module.exports = bot;
+
+/*
 // what is the difference: on and once?
 client.once('ready', () => {
     console.log(`Logged in as ${client.user.tag}`)
@@ -31,5 +46,5 @@ client.on('guildMemberAdd', async (member) => {
         files: [img]
     })
 });
-
+*/
 client.login(process.env.TOKEN);
